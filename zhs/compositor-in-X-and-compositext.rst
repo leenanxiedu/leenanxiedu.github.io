@@ -131,7 +131,7 @@ Chromium）都需要首先渲染到内部的 `XPixMap <http://en.wikipedia.org/w
    状态或者显示在别的虚拟桌面，用 X 的术语说就是窗口必须处于 :ruby:`被映射|mapped`
    的状态。因此直接用上述方法 **不能得到没有显示的窗口的输出** ，比如不能对最小化的窗口
    直接实现 Windows 7 中的 Aero Peak 之类的效果。这个限制可以想办法绕开，
-   比如在需要窗口输出的时候临时把窗口隐射到桌面上，拿到输出之后再隐藏起来，
+   比如在需要窗口输出的时候临时把窗口映射到桌面上，拿到输出之后再隐藏起来，
    不过要实现这一点需要混成器和窗口管理器相互配合。
 #. 不像 Mac OS X 的基于 OpenGL Surface 的绘图模型是 :ruby:`设备无关|device independent`
    的，这里 X 的绘图模型是 :ruby:`设备相关|device dependent` 的。
@@ -143,7 +143,7 @@ Chromium）都需要首先渲染到内部的 `XPixMap <http://en.wikipedia.org/w
    :ruby:`子像素布局|subpixel layout` 这些属性以提供最好的渲染效果。
    Mac OS X 10.4 在设计的时候也曾考虑过提供无极缩放的支持，而这种支持到了 Mac OS X
    10.5 中就缩水变成了 Retina 的固定 2 倍缩放。这种局面在 X
-   上没有发生正是因为 X 的绘图模型的这种设备相关性，而 Mac OS X 的混成器才用的
+   上没有发生正是因为 X 的绘图模型的这种设备相关性，而 Mac OS X 的混成器采用的
    OpenGL Surface 则无视了这些设备相关的属性。
 
 

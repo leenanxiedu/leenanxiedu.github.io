@@ -7,10 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- See: https://googlechrome.github.io/samples/csp-upgrade-insecure-requests/index.html -->
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    
+   
 
     <meta name="theme-color" content="#6b5594">
 
@@ -36,7 +33,6 @@
                   content="//farseerfc.me/compositor-in-X-and-compositext.png"/>
 
     
-    <meta property="wb:webmaster" content="a699edf35652cd85" />
 
     <!-- Bootstrap -->
         <link href="//farseerfc.me/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -230,7 +226,6 @@ Farseerfc的小窩            </a>
 </span>
 
 
-    <wb:share-button appkey="NANnN" addition="number" type="button" language="zh_tw" picture_search="false" ralateUid="1862842353" default_text="「X 中的混成器與 Composite 擴展」在上篇文章 「桌面系統的混成器簡史」 中我介紹了其它桌面系統中的混成器的發展史和工作原理， 話題回到我們的正題 Linux 系統上，來說說目前 X 中混成器是如何工作的。 這篇文章將比上一篇深入更多技術細節，不想看太多細節的可以直接跳過看 結論 。 原始的 X 的繪圖模型 首先，..."  pic="http%3A//farseerfc.me%2Fcompositor-in-X-and-compositext.png"></wb:share-button>
 
 </div><!-- /.post-info -->                </div>
             </header>
@@ -330,7 +325,7 @@ RedirectSubwindows</code>
 狀態或者顯示在別的虛擬桌面，用 X 的術語說就是窗口必須處於 <ruby><rb>被映射</rb><rp>(</rp><rt>mapped</rt><rp>)</rp></ruby>
 的狀態。因此直接用上述方法 <strong>不能得到沒有顯示的窗口的輸出</strong> ，比如不能對最小化的窗口
 直接實現 Windows 7 中的 Aero Peak 之類的效果。這個限制可以想辦法繞開，
-比如在需要窗口輸出的時候臨時把窗口隱射到桌面上，拿到輸出之後再隱藏起來，
+比如在需要窗口輸出的時候臨時把窗口映射到桌面上，拿到輸出之後再隱藏起來，
 不過要實現這一點需要混成器和窗口管理器相互配合。</li>
 <li>不像 Mac OS X 的基於 OpenGL Surface 的繪圖模型是 <ruby><rb>設備無關</rb><rp>(</rp><rt>device independent</rt><rp>)</rp></ruby>
 的，這裏 X 的繪圖模型是 <ruby><rb>設備相關</rb><rp>(</rp><rt>device dependent</rt><rp>)</rp></ruby> 的。
@@ -342,7 +337,7 @@ RedirectSubwindows</code>
 <ruby><rb>子像素佈局</rb><rp>(</rp><rt>subpixel layout</rt><rp>)</rp></ruby> 這些屬性以提供最好的渲染效果。
 Mac OS X 10.4 在設計的時候也曾考慮過提供無極縮放的支持，而這種支持到了 Mac OS X
 10.5 中就縮水變成了 Retina 的固定 2 倍縮放。這種局面在 X
-上沒有發生正是因爲 X 的繪圖模型的這種設備相關性，而 Mac OS X 的混成器纔用的
+上沒有發生正是因爲 X 的繪圖模型的這種設備相關性，而 Mac OS X 的混成器採用的
 OpenGL Surface 則無視了這些設備相關的屬性。</li>
 </ol>
 </div>
@@ -510,19 +505,6 @@ because it is broken and maintainerless.</blockquote>
         </div>
       </div>
       <div class="panel panel-primary">
-        <div class="panel-heading" role="tab" id="weibo-heading">
-          <h4 class="panel-title">
-            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#weibo-comments" aria-expanded="false" aria-controls="weibo-comments">
-              <i class="fa fa-weibo"></i> Weibo 留言            </a>
-          </h4>
-        </div>
-        <div id="weibo-comments" class="panel-collapse collapse" role="tabpanel" aria-labelledby="weibo-heading">
-          <div class="panel-body">
-                <wb:comments url="auto" width="auto" language="zh_tw" appkey="WEIBO_APPKEYN" ></wb:comments>
-          </div>
-        </div>
-      </div>
-      <div class="panel panel-primary">
         <div class="panel-heading" role="tab" id="ds-heading">
           <h4 class="panel-title">
             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#ds-comments" aria-expanded="false" aria-controls="ds-comments">
@@ -619,311 +601,6 @@ because it is broken and maintainerless.</blockquote>
     </div>
 <div class="panel-body">
     <ul class="list-group list-inline tagcloud" id="tags">
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/termcap.html">
-                    termcap <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/tty.html">
-                    tty <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/ugh.html">
-                    ugh <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/japan.html">
-                    japan <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-2">
-                <a href="//farseerfc.me/tag/pelican.html">
-                    pelican <sup> 4</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/macosx.html">
-                    macosx <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/domain.html">
-                    domain <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-2">
-                <a href="//farseerfc.me/tag/python.html">
-                    python <sup> 4</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-3">
-                <a href="//farseerfc.me/tag/icse.html">
-                    icse <sup> 2</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/travis.html">
-                    travis <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/unix.html">
-                    unix <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/paper.html">
-                    paper <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/gnome3.html">
-                    gnome3 <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/zz.html">
-                    zz <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-2">
-                <a href="//farseerfc.me/tag/linux.html">
-                    linux <sup> 5</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/writing.html">
-                    writing <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/kde5.html">
-                    kde5 <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/creationism.html">
-                    creationism <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-3">
-                <a href="//farseerfc.me/tag/java.html">
-                    Java <sup> 2</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/academic.html">
-                    academic <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/chrome.html">
-                    chrome <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/ruby.html">
-                    ruby <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/msr.html">
-                    msr <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-3">
-                <a href="//farseerfc.me/tag/desktop.html">
-                    desktop <sup> 2</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/blog.html">
-                    blog <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/wayland.html">
-                    wayland <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/window.html">
-                    window <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/archlinux.html">
-                    archlinux <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/marry.html">
-                    marry <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/template.html">
-                    template <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/you.html">
-                    you <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/cloudflare.html">
-                    cloudflare <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/plasma.html">
-                    plasma <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/acpi.html">
-                    acpi <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/css.html">
-                    css <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/mining.html">
-                    mining <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/sjtu.html">
-                    sjtu <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/repository.html">
-                    repository <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/ncurses.html">
-                    ncurses <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-3">
-                <a href="//farseerfc.me/tag/material.html">
-                    material <sup> 2</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/yssy.html">
-                    yssy <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/oop.html">
-                    oop <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/xorg.html">
-                    xorg <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/ubuntu.html">
-                    ubuntu <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-3">
-                <a href="//farseerfc.me/tag/compositor.html">
-                    compositor <sup> 2</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/arch.html">
-                    arch <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/pages.html">
-                    pages <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/me.html">
-                    me <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-1">
-                <a href="//farseerfc.me/tag/c.html">
-                    C++ <sup> 14</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-3">
-                <a href="//farseerfc.me/tag/github.html">
-                    github <sup> 2</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/remote.html">
-                    remote <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/windows.html">
-                    windows <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/stdio.html">
-                    stdio <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/bootstrap.html">
-                    bootstrap <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/manager.html">
-                    manager <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/will.html">
-                    will <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/travis-ci.html">
-                    travis-ci <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/terminfo.html">
-                    terminfo <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-4">
-                <a href="//farseerfc.me/tag/subsite.html">
-                    subsite <sup> 1</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-3">
-                <a href="//farseerfc.me/tag/microsoft.html">
-                    microsoft <sup> 2</sup>
-                </a>
-            </li>
-            <li class="list-group-item tag-3">
-                <a href="//farseerfc.me/tag/software.html">
-                    software <sup> 2</sup>
-                </a>
-            </li>
     </ul>
 </div>
 </div>
@@ -944,16 +621,7 @@ because it is broken and maintainerless.</blockquote>
     </div>
 </div>
 </div>
-<div class="sidebar-item hidden-xs">
-<div class="panel panel-default">
-	<div class="panel-heading">
-        <h4>
-<i class="fa fa-weibo fa-lg"></i><span class="icon-label">最新微博</span>
-        </h4>
-    </div>
-<div id="weibo_timeline"><iframe width="100%" height="400" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=600&fansRow=1&ptype=1&speed=0&skin=5&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1862842353&verifier=b193b9de&dpc=1"></iframe></div>
-</div>
-</div>
+
 <div class="sidebar-item hidden-xs">
 <div class="panel panel-default">
 	<div class="panel-heading">
@@ -1099,7 +767,6 @@ $.ajax( {
         })();
     </script>
     <!-- End Google Analytics Code -->
-<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 
 <script src="//farseerfc.me/theme/js/ripples.min.js"></script>
 <script src="//farseerfc.me/theme/js/material.min.js"></script>

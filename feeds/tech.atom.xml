@@ -77,7 +77,7 @@ RedirectSubwindows&lt;/code&gt;
 狀態或者顯示在別的虛擬桌面，用 X 的術語說就是窗口必須處於 &lt;ruby&gt;&lt;rb&gt;被映射&lt;/rb&gt;&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;mapped&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;
 的狀態。因此直接用上述方法 &lt;strong&gt;不能得到沒有顯示的窗口的輸出&lt;/strong&gt; ，比如不能對最小化的窗口
 直接實現 Windows 7 中的 Aero Peak 之類的效果。這個限制可以想辦法繞開，
-比如在需要窗口輸出的時候臨時把窗口隱射到桌面上，拿到輸出之後再隱藏起來，
+比如在需要窗口輸出的時候臨時把窗口映射到桌面上，拿到輸出之後再隱藏起來，
 不過要實現這一點需要混成器和窗口管理器相互配合。&lt;/li&gt;
 &lt;li&gt;不像 Mac OS X 的基於 OpenGL Surface 的繪圖模型是 &lt;ruby&gt;&lt;rb&gt;設備無關&lt;/rb&gt;&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;device independent&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;
 的，這裏 X 的繪圖模型是 &lt;ruby&gt;&lt;rb&gt;設備相關&lt;/rb&gt;&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;device dependent&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt; 的。
@@ -89,7 +89,7 @@ RedirectSubwindows&lt;/code&gt;
 &lt;ruby&gt;&lt;rb&gt;子像素佈局&lt;/rb&gt;&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;subpixel layout&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt; 這些屬性以提供最好的渲染效果。
 Mac OS X 10.4 在設計的時候也曾考慮過提供無極縮放的支持，而這種支持到了 Mac OS X
 10.5 中就縮水變成了 Retina 的固定 2 倍縮放。這種局面在 X
-上沒有發生正是因爲 X 的繪圖模型的這種設備相關性，而 Mac OS X 的混成器纔用的
+上沒有發生正是因爲 X 的繪圖模型的這種設備相關性，而 Mac OS X 的混成器採用的
 OpenGL Surface 則無視了這些設備相關的屬性。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
@@ -418,7 +418,7 @@ DirectX 窗口。又或者我們可以認爲，整個界面上只有一個真正
 &lt;p&gt;別急，我寫這些文章的目的是想聊聊 Linux 中的混成器，尤其是 X 下現有的混成器和 Wayland
 ，這篇文章只是個背景介紹。關於 X 中混成器的實現方式和限制，且聽我下回分解。&lt;/p&gt;
 &lt;/div&gt;
-&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
@@ -1617,7 +1617,7 @@ bootstrap-material-design 樣式。自己草草修改的東西被別人用到果
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
