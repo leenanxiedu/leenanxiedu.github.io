@@ -235,18 +235,30 @@ DirectX 窗口。又或者我们可以认为，整个界面上只有一个真正
 ，这篇文章只是个背景介绍。关于 X 中混成器的实现方式和限制，且听我下回分解。&lt;/p&gt;
 &lt;/div&gt;
 &lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+    
     var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdnjscn.b0.upaiyun.com/libs/mathjax/2.4.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.type = 'text/javascript'; 
+    mathjaxscript.src = location_protocol + '//cdnjscn.b0.upaiyun.com/libs/mathjax/2.4.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
         "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: 'center'," +
-        "    displayIndent: '0em'," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
         "    showMathMenu: true," +
         "    tex2jax: { " +
         "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
@@ -255,9 +267,26 @@ DirectX 窗口。又或者我们可以认为，整个界面上只有一个真正
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-        "    } " +
-        "}); ";
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;</summary><category term="desktop"></category><category term="compositor"></category><category term="macosx"></category><category term="windows"></category><category term="window"></category><category term="manager"></category></entry><entry><title>archlinux 上用 chrome 实现 透明计算 远程登录</title><link href="//farseerfc.me/zhs/arch-chrome-remote-desktop.html" rel="alternate"></link><updated>2015-02-13T20:39:00+09:00</updated><author><name>farseerfc</name></author><id>tag:farseerfc.me,2015-02-13:zhs/arch-chrome-remote-desktop.html</id><summary type="html">
@@ -277,7 +306,7 @@ DirectX 窗口。又或者我们可以认为，整个界面上只有一个真正
 &lt;div class="panel-heading"&gt;
 Chrome Remote Desktop 插件&lt;/div&gt;
 &lt;div class="panel-body"&gt;
-&lt;img alt="Chrome Remote Desktop 插件" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-plugin.png"/&gt;
+&lt;img alt="Chrome Remote Desktop 插件" class="img-responsive" src="{filename}/images/chrome-remote-desktop-plugin.png"/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="chrome-remote-desktop"&gt;
@@ -334,7 +363,7 @@ host#.json&lt;/code&gt;
 &lt;p&gt;接下来需要从 Chrome 的插件里启用远程桌面。打开 Chrome 的 Remote Desktop 插件，这时
 应该可以看到一个「启用远程链接」的按钮。&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="Chrome Remote Desktop 插件中「启用远程链接」的按钮" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-enable-button.png"/&gt;
+&lt;img alt="Chrome Remote Desktop 插件中「启用远程链接」的按钮" class="img-responsive" src="{filename}/images/chrome-remote-desktop-enable-button.png"/&gt;
 &lt;p class="caption"&gt;Chrome Remote Desktop 插件中「启用远程链接」的按钮&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="alert alert-warning compound"&gt;
@@ -352,7 +381,7 @@ Chrome 内部的 Remoting 功能更改了 API 导致可能出问题。如果你�
 &lt;p&gt;点击「启用远程链接」，设定一个 PIN 密码（不需要很复杂，这里首先有 Google 帐号验证保证只有
 你才能访问），然后就能看到这套电脑的 hostname 出现在「我的电脑」列表里。&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="启用远程链接之后的样子" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-after-enabled.png"/&gt;
+&lt;img alt="启用远程链接之后的样子" class="img-responsive" src="{filename}/images/chrome-remote-desktop-after-enabled.png"/&gt;
 &lt;p class="caption"&gt;启用远程链接之后的样子&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;同时，启用了远程链接之后，可以在刚刚创建的 ~/.config/chrome-remote-desktop
@@ -368,12 +397,12 @@ systemctl --user enable&lt;/code&gt;
 &lt;p&gt;如果上面的设置一切正常，就可以看到 chrome-remote-desktop 启动了另外一个 Xorg 执行你
 刚刚指定的桌面环境：&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="htop 中看到的 chrome-remote-desktop 启动的另外一个 Xorg" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-htop.png"/&gt;
+&lt;img alt="htop 中看到的 chrome-remote-desktop 启动的另外一个 Xorg" class="img-responsive" src="{filename}/images/chrome-remote-desktop-htop.png"/&gt;
 &lt;p class="caption"&gt;htop 中看到的 chrome-remote-desktop 启动的另外一个 Xorg&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;然后就可以试着通过 Remote Desktop 插件登录到这个新开的 Xorg 了：&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="「远程」登录到新的 XFCE4" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-xfce4.png"/&gt;
+&lt;img alt="「远程」登录到新的 XFCE4" class="img-responsive" src="{filename}/images/chrome-remote-desktop-xfce4.png"/&gt;
 &lt;p class="caption"&gt;「远程」登录到新的 XFCE4&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -393,7 +422,7 @@ Ubuntu 12.04 和 12.10 （14.04之后似乎有
 &lt;div class="panel-heading"&gt;
 手机上的 Chrome 远程桌面 App&lt;/div&gt;
 &lt;div class="panel-body"&gt;
-&lt;img alt="手机上的 Chrome 远程桌面 App" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-android.png"/&gt;
+&lt;img alt="手机上的 Chrome 远程桌面 App" class="img-responsive" src="{filename}/images/chrome-remote-desktop-android.png"/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;通过上面的设置就可以从任何一个 Chrome 远程桌面客户端登录刚刚设置的这台电脑了。
@@ -402,7 +431,7 @@ Ubuntu 12.04 和 12.10 （14.04之后似乎有
 &lt;p&gt;除了桌面的 Chrome 之外还有一个客户端是 Android 上的
 &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=com.google.chromeremotedesktop"&gt;Chrome 远程桌面 App&lt;/a&gt; 经过上面的设置之后，从这个 App 也能看到并登录：&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="手机远程登录" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-android-logined.png"/&gt;
+&lt;img alt="手机远程登录" class="img-responsive" src="{filename}/images/chrome-remote-desktop-android-logined.png"/&gt;
 &lt;p class="caption"&gt;手机远程登录&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;好啦，开始享受国家自然科学一等奖的透明计算技术吧！&lt;/p&gt;

@@ -42,7 +42,7 @@ Android 的 &lt;a class="reference external" href="https://code.google.com/p/and
 需要编译的 repo ，这样 Travis-CI 就会监视对这个 repo 的所有 push 操作，并且对
 每个 push 调用测试了。&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="在 Travis-CI 中开启对 Github Repo 的持续整合" class="img-responsive" src="//farseerfc.me/zhs/../images/travis-repo-enable.png"/&gt;
+&lt;img alt="在 Travis-CI 中开启对 Github Repo 的持续整合" class="img-responsive" src="{filename}/images/travis-repo-enable.png"/&gt;
 &lt;p class="caption"&gt;在 Travis-CI 中开启对 Github Repo 的持续整合&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;然后在 repo 的根目录放一个 &lt;code class="code"&gt;
@@ -117,7 +117,7 @@ ssh key 添加到 github 账户就可以了，在编译细节都通过 github re
 &lt;div class="panel-heading"&gt;
 Github 上创建 Personal Access Token&lt;/div&gt;
 &lt;div class="panel-body"&gt;
-&lt;img alt="Github 上创建 Personal Access Token" class="img-responsive" src="//farseerfc.me/zhs/../images/travis-blog-push.png"/&gt;
+&lt;img alt="Github 上创建 Personal Access Token" class="img-responsive" src="{filename}/images/travis-blog-push.png"/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;好在 Github 支持通过 &lt;a class="reference external" href="https://github.com/settings/applications"&gt;Personal Access Token&lt;/a&gt;
@@ -233,7 +233,7 @@ Readme.md&lt;/code&gt;
 &lt;p&gt;这样设置之后的另一个好处就在于可以利用 Github 的 Web 界面编辑文章内容。在 Github 里
 编辑和保存之后会自动作为一个 commit 提交，所以也会触发 Travis-CI 的自动编译。&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="在 Github 的 Web 界面中直接编辑文章内容" class="img-responsive" src="//farseerfc.me/zhs/../images/travis-edit-github-web.png"/&gt;
+&lt;img alt="在 Github 的 Web 界面中直接编辑文章内容" class="img-responsive" src="{filename}/images/travis-edit-github-web.png"/&gt;
 &lt;p class="caption"&gt;在 Github 的 Web 界面中直接编辑文章内容&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;以及虽然目前还没有好用的 Github 的手机客户端，不过直接用 Android/iPhone 的浏览器登录

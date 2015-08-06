@@ -603,18 +603,30 @@ DirectX 窗口。又或者我们可以认为，整个界面上只有一个真正
 ，这篇文章只是个背景介绍。关于 X 中混成器的实现方式和限制，且听我下回分解。&lt;/p&gt;
 &lt;/div&gt;
 &lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+    
     var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdnjscn.b0.upaiyun.com/libs/mathjax/2.4.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.type = 'text/javascript'; 
+    mathjaxscript.src = location_protocol + '//cdnjscn.b0.upaiyun.com/libs/mathjax/2.4.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
         "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: 'center'," +
-        "    displayIndent: '0em'," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
         "    showMathMenu: true," +
         "    tex2jax: { " +
         "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
@@ -623,9 +635,26 @@ DirectX 窗口。又或者我们可以认为，整个界面上只有一个真正
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-        "    } " +
-        "}); ";
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;</summary><category term="desktop"></category><category term="compositor"></category><category term="macosx"></category><category term="windows"></category><category term="window"></category><category term="manager"></category></entry><entry><title>桌面系統的混成器簡史</title><link href="//farseerfc.me/zhs/../brief-history-of-compositors-in-desktop-os.html" rel="alternate"></link><updated>2015-03-19T13:45:00+09:00</updated><author><name>farseerfc</name></author><id>tag:farseerfc.me,2015-03-19:zhs/../brief-history-of-compositors-in-desktop-os.html</id><summary type="html">
@@ -863,33 +892,7 @@ DirectX 窗口。又或者我們可以認爲，整個界面上只有一個真正
 &lt;p&gt;別急，我寫這些文章的目的是想聊聊 Linux 中的混成器，尤其是 X 下現有的混成器和 Wayland
 ，這篇文章只是個背景介紹。關於 X 中混成器的實現方式和限制，且聽我下回分解。&lt;/p&gt;
 &lt;/div&gt;
-&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdnjscn.b0.upaiyun.com/libs/mathjax/2.4.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: 'center'," +
-        "    displayIndent: '0em'," +
-        "    showMathMenu: true," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-        "    } " +
-        "}); ";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</summary><category term="desktop"></category><category term="compositor"></category><category term="macosx"></category><category term="windows"></category><category term="window"></category><category term="manager"></category></entry><entry><title>避免在博文中写「简单地」</title><link href="//farseerfc.me/zhs/stop-write-simply.html" rel="alternate"></link><updated>2015-03-11T22:00:00+09:00</updated><author><name>farseerfc</name></author><id>tag:farseerfc.me,2015-03-11:zhs/stop-write-simply.html</id><summary type="html">&lt;p&gt;我的 RSS 订阅着一个博客叫 &lt;a class="reference external" href="http://blogs.msdn.com/b/oldnewthing/"&gt;The Old New Thing&lt;/a&gt;
+</summary><category term="desktop"></category><category term="compositor"></category><category term="macosx"></category><category term="windows"></category><category term="window"></category><category term="manager"></category></entry><entry><title>避免在博文中写「简单地」</title><link href="//farseerfc.me/zhs/stop-write-simply.html" rel="alternate"></link><updated>2015-03-11T22:00:00+09:00</updated><author><name>farseerfc</name></author><id>tag:farseerfc.me,2015-03-11:zhs/stop-write-simply.html</id><summary type="html">&lt;p&gt;我的 RSS 订阅着一个博客叫 &lt;a class="reference external" href="http://blogs.msdn.com/b/oldnewthing/"&gt;The Old New Thing&lt;/a&gt;
 ，作者是Windows开发者之一的 Raymond Chen ，记录 Windows 中的很多有趣的技术细节。
 这个博客中的一些精彩内容还被他写成了一本书，中文名叫《Windows编程启示录》
 (ISBN: &lt;a class="reference external" href="http://www.amazon.cn/dp/B0011C1ZEG/"&gt;978-7-111-21919-4&lt;/a&gt;) 而英文书名就叫
@@ -956,7 +959,7 @@ Android 的 &lt;a class="reference external" href="https://code.google.com/p/and
 需要编译的 repo ，这样 Travis-CI 就会监视对这个 repo 的所有 push 操作，并且对
 每个 push 调用测试了。&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="在 Travis-CI 中开启对 Github Repo 的持续整合" class="img-responsive" src="//farseerfc.me/zhs/../images/travis-repo-enable.png"/&gt;
+&lt;img alt="在 Travis-CI 中开启对 Github Repo 的持续整合" class="img-responsive" src="{filename}/images/travis-repo-enable.png"/&gt;
 &lt;p class="caption"&gt;在 Travis-CI 中开启对 Github Repo 的持续整合&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;然后在 repo 的根目录放一个 &lt;code class="code"&gt;
@@ -1031,7 +1034,7 @@ ssh key 添加到 github 账户就可以了，在编译细节都通过 github re
 &lt;div class="panel-heading"&gt;
 Github 上创建 Personal Access Token&lt;/div&gt;
 &lt;div class="panel-body"&gt;
-&lt;img alt="Github 上创建 Personal Access Token" class="img-responsive" src="//farseerfc.me/zhs/../images/travis-blog-push.png"/&gt;
+&lt;img alt="Github 上创建 Personal Access Token" class="img-responsive" src="{filename}/images/travis-blog-push.png"/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;好在 Github 支持通过 &lt;a class="reference external" href="https://github.com/settings/applications"&gt;Personal Access Token&lt;/a&gt;
@@ -1147,7 +1150,7 @@ Readme.md&lt;/code&gt;
 &lt;p&gt;这样设置之后的另一个好处就在于可以利用 Github 的 Web 界面编辑文章内容。在 Github 里
 编辑和保存之后会自动作为一个 commit 提交，所以也会触发 Travis-CI 的自动编译。&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="在 Github 的 Web 界面中直接编辑文章内容" class="img-responsive" src="//farseerfc.me/zhs/../images/travis-edit-github-web.png"/&gt;
+&lt;img alt="在 Github 的 Web 界面中直接编辑文章内容" class="img-responsive" src="{filename}/images/travis-edit-github-web.png"/&gt;
 &lt;p class="caption"&gt;在 Github 的 Web 界面中直接编辑文章内容&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;以及虽然目前还没有好用的 Github 的手机客户端，不过直接用 Android/iPhone 的浏览器登录
@@ -1435,7 +1438,7 @@ github 並編輯文章的可用性也還不錯，所以同樣的方式也可以�
 &lt;a class="reference external" href="http://sx9.jp/weather/wakayama.html"&gt;和歌山&lt;/a&gt; ( &lt;a class="reference external" href="//twitter.com/ninetan_wakayam"&gt;@ninetan_wakayam&lt;/a&gt; ) 的各个大学所在校区
 两个半小时内做精确的降水概率预测。比如今天晚上大阪大学三个校区的降水概率图如下：&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="今天晚上大阪大学三个校区的降水概率图" class="img-responsive" src="//farseerfc.me/zhs/../images/forcast-osaka.png"/&gt;
+&lt;img alt="今天晚上大阪大学三个校区的降水概率图" class="img-responsive" src="{filename}/images/forcast-osaka.png"/&gt;
 &lt;p class="caption"&gt;今天晚上大阪大学三个校区的降水概率图&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;从上面的图可以看出这个系统的预测精度是以 &lt;strong&gt;分为单位&lt;/strong&gt; 的，可以看到
@@ -1548,7 +1551,7 @@ github 並編輯文章的可用性也還不錯，所以同樣的方式也可以�
 &lt;div class="panel-heading"&gt;
 Chrome Remote Desktop 插件&lt;/div&gt;
 &lt;div class="panel-body"&gt;
-&lt;img alt="Chrome Remote Desktop 插件" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-plugin.png"/&gt;
+&lt;img alt="Chrome Remote Desktop 插件" class="img-responsive" src="{filename}/images/chrome-remote-desktop-plugin.png"/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="chrome-remote-desktop"&gt;
@@ -1605,7 +1608,7 @@ host#.json&lt;/code&gt;
 &lt;p&gt;接下来需要从 Chrome 的插件里启用远程桌面。打开 Chrome 的 Remote Desktop 插件，这时
 应该可以看到一个「启用远程链接」的按钮。&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="Chrome Remote Desktop 插件中「启用远程链接」的按钮" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-enable-button.png"/&gt;
+&lt;img alt="Chrome Remote Desktop 插件中「启用远程链接」的按钮" class="img-responsive" src="{filename}/images/chrome-remote-desktop-enable-button.png"/&gt;
 &lt;p class="caption"&gt;Chrome Remote Desktop 插件中「启用远程链接」的按钮&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="alert alert-warning compound"&gt;
@@ -1623,7 +1626,7 @@ Chrome 内部的 Remoting 功能更改了 API 导致可能出问题。如果你�
 &lt;p&gt;点击「启用远程链接」，设定一个 PIN 密码（不需要很复杂，这里首先有 Google 帐号验证保证只有
 你才能访问），然后就能看到这套电脑的 hostname 出现在「我的电脑」列表里。&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="启用远程链接之后的样子" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-after-enabled.png"/&gt;
+&lt;img alt="启用远程链接之后的样子" class="img-responsive" src="{filename}/images/chrome-remote-desktop-after-enabled.png"/&gt;
 &lt;p class="caption"&gt;启用远程链接之后的样子&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;同时，启用了远程链接之后，可以在刚刚创建的 ~/.config/chrome-remote-desktop
@@ -1639,12 +1642,12 @@ systemctl --user enable&lt;/code&gt;
 &lt;p&gt;如果上面的设置一切正常，就可以看到 chrome-remote-desktop 启动了另外一个 Xorg 执行你
 刚刚指定的桌面环境：&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="htop 中看到的 chrome-remote-desktop 启动的另外一个 Xorg" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-htop.png"/&gt;
+&lt;img alt="htop 中看到的 chrome-remote-desktop 启动的另外一个 Xorg" class="img-responsive" src="{filename}/images/chrome-remote-desktop-htop.png"/&gt;
 &lt;p class="caption"&gt;htop 中看到的 chrome-remote-desktop 启动的另外一个 Xorg&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;然后就可以试着通过 Remote Desktop 插件登录到这个新开的 Xorg 了：&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="「远程」登录到新的 XFCE4" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-xfce4.png"/&gt;
+&lt;img alt="「远程」登录到新的 XFCE4" class="img-responsive" src="{filename}/images/chrome-remote-desktop-xfce4.png"/&gt;
 &lt;p class="caption"&gt;「远程」登录到新的 XFCE4&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1664,7 +1667,7 @@ Ubuntu 12.04 和 12.10 （14.04之后似乎有
 &lt;div class="panel-heading"&gt;
 手机上的 Chrome 远程桌面 App&lt;/div&gt;
 &lt;div class="panel-body"&gt;
-&lt;img alt="手机上的 Chrome 远程桌面 App" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-android.png"/&gt;
+&lt;img alt="手机上的 Chrome 远程桌面 App" class="img-responsive" src="{filename}/images/chrome-remote-desktop-android.png"/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;通过上面的设置就可以从任何一个 Chrome 远程桌面客户端登录刚刚设置的这台电脑了。
@@ -1673,7 +1676,7 @@ Ubuntu 12.04 和 12.10 （14.04之后似乎有
 &lt;p&gt;除了桌面的 Chrome 之外还有一个客户端是 Android 上的
 &lt;a class="reference external" href="https://play.google.com/store/apps/details?id=com.google.chromeremotedesktop"&gt;Chrome 远程桌面 App&lt;/a&gt; 经过上面的设置之后，从这个 App 也能看到并登录：&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="手机远程登录" class="img-responsive" src="//farseerfc.me/zhs/../images/chrome-remote-desktop-android-logined.png"/&gt;
+&lt;img alt="手机远程登录" class="img-responsive" src="{filename}/images/chrome-remote-desktop-android-logined.png"/&gt;
 &lt;p class="caption"&gt;手机远程登录&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;好啦，开始享受国家自然科学一等奖的透明计算技术吧！&lt;/p&gt;
@@ -1868,13 +1871,13 @@ github.io 是不加密的。&lt;/li&gt;
 CloudFlare 的，如下图：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="更改狗爹的域名服务器" class="img-responsive" src="//farseerfc.me/zhs/../images/godaddy.png"/&gt;
+&lt;img alt="更改狗爹的域名服务器" class="img-responsive" src="{filename}/images/godaddy.png"/&gt;
 &lt;p class="caption"&gt;更改狗爹的域名服务器&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;申请好之后就由 CloudFlare 接管域名解析了，接下来在 CloudFlare 的 DNS 设置添加一条
 &lt;a class="reference external" href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/"&gt;A 类规则指向 github pages 的 IP&lt;/a&gt; 。&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="更改CloudFlare的DNS规则" class="img-responsive" src="//farseerfc.me/zhs/../images/cloudflaredns.png"/&gt;
+&lt;img alt="更改CloudFlare的DNS规则" class="img-responsive" src="{filename}/images/cloudflaredns.png"/&gt;
 &lt;p class="caption"&gt;更改CloudFlare的DNS规则&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;等一切都反映到 DNS 服务器上就设置完成了，接下来给
@@ -1901,7 +1904,7 @@ CloudFlare 的，如下图：&lt;/li&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;然后把生成的静态网站 push 到 github 之后可以从项目设置里看到域名的变化：&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="Github 配置好自定义域名之后的变化" class="img-responsive" src="//farseerfc.me/zhs/../images/githubdomain.png"/&gt;
+&lt;img alt="Github 配置好自定义域名之后的变化" class="img-responsive" src="{filename}/images/githubdomain.png"/&gt;
 &lt;p class="caption"&gt;Github 配置好自定义域名之后的变化&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;最后把Disqus的评论也迁移到新的域名，disqus有方便的迁移向导，一直下一步就可以了。&lt;/p&gt;
@@ -2699,18 +2702,30 @@ bootstrap-material-design 样式。自己草草修改的东西被别人用到果
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+    
     var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdnjscn.b0.upaiyun.com/libs/mathjax/2.4.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.type = 'text/javascript'; 
+    mathjaxscript.src = location_protocol + '//cdnjscn.b0.upaiyun.com/libs/mathjax/2.4.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
         "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: 'center'," +
-        "    displayIndent: '0em'," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
         "    showMathMenu: true," +
         "    tex2jax: { " +
         "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
@@ -2719,9 +2734,26 @@ bootstrap-material-design 样式。自己草草修改的东西被别人用到果
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-        "    } " +
-        "}); ";
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;</summary><category term="python"></category><category term="pelican"></category><category term="bootstrap"></category><category term="material"></category><category term="subsite"></category></entry><entry><title>重新設計了 Pelican 的主題與插件</title><link href="//farseerfc.me/zhs/../redesign-pelican-theme.html" rel="alternate"></link><updated>2015-01-25T22:45:00+09:00</updated><author><name>farseerfc</name></author><id>tag:farseerfc.me,2015-01-25:zhs/../redesign-pelican-theme.html</id><summary type="html">
@@ -3421,33 +3453,7 @@ bootstrap-material-design 樣式。自己草草修改的東西被別人用到果
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdnjscn.b0.upaiyun.com/libs/mathjax/2.4.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: 'center'," +
-        "    displayIndent: '0em'," +
-        "    showMathMenu: true," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-        "    } " +
-        "}); ";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</summary><category term="python"></category><category term="pelican"></category><category term="bootstrap"></category><category term="material"></category><category term="subsite"></category></entry><entry><title>总结一下 Material Design 的 CSS 框架</title><link href="//farseerfc.me/zhs/summarize-material-design-css-framework.html" rel="alternate"></link><updated>2015-01-16T03:27:00+09:00</updated><author><name>farseerfc</name></author><id>tag:farseerfc.me,2015-01-16:zhs/summarize-material-design-css-framework.html</id><summary type="html">
+</summary><category term="python"></category><category term="pelican"></category><category term="bootstrap"></category><category term="material"></category><category term="subsite"></category></entry><entry><title>总结一下 Material Design 的 CSS 框架</title><link href="//farseerfc.me/zhs/summarize-material-design-css-framework.html" rel="alternate"></link><updated>2015-01-16T03:27:00+09:00</updated><author><name>farseerfc</name></author><id>tag:farseerfc.me,2015-01-16:zhs/summarize-material-design-css-framework.html</id><summary type="html">
 &lt;p&gt;现在这里的界面风格要从 Google 在 &lt;a class="reference external" href="https://www.google.com/events/io"&gt;I/O 2014 大会&lt;/a&gt;
 上公布Android L 也即 后来的 Lollipop 说起。 他们在谈论界面设计的时候公布了他们的
 设计准则： &lt;a class="reference external" href="http://www.google.com/design/spec/material-design/introduction.html"&gt;Material Design&lt;/a&gt; (&lt;a class="reference external" href="http://wcc723.gitbooks.io/google_design_translate/"&gt;中文非官方翻译&lt;/a&gt; )。

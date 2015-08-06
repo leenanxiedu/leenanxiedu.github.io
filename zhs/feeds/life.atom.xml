@@ -51,7 +51,7 @@
 &lt;a class="reference external" href="http://sx9.jp/weather/wakayama.html"&gt;和歌山&lt;/a&gt; ( &lt;a class="reference external" href="//twitter.com/ninetan_wakayam"&gt;@ninetan_wakayam&lt;/a&gt; ) 的各个大学所在校区
 两个半小时内做精确的降水概率预测。比如今天晚上大阪大学三个校区的降水概率图如下：&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="今天晚上大阪大学三个校区的降水概率图" class="img-responsive" src="//farseerfc.me/zhs/../images/forcast-osaka.png"/&gt;
+&lt;img alt="今天晚上大阪大学三个校区的降水概率图" class="img-responsive" src="{filename}/images/forcast-osaka.png"/&gt;
 &lt;p class="caption"&gt;今天晚上大阪大学三个校区的降水概率图&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;从上面的图可以看出这个系统的预测精度是以 &lt;strong&gt;分为单位&lt;/strong&gt; 的，可以看到

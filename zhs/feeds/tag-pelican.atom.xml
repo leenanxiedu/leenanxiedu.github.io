@@ -42,7 +42,7 @@ Android 的 &lt;a class="reference external" href="https://code.google.com/p/and
 需要编译的 repo ，这样 Travis-CI 就会监视对这个 repo 的所有 push 操作，并且对
 每个 push 调用测试了。&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="在 Travis-CI 中开启对 Github Repo 的持续整合" class="img-responsive" src="//farseerfc.me/zhs/../images/travis-repo-enable.png"/&gt;
+&lt;img alt="在 Travis-CI 中开启对 Github Repo 的持续整合" class="img-responsive" src="{filename}/images/travis-repo-enable.png"/&gt;
 &lt;p class="caption"&gt;在 Travis-CI 中开启对 Github Repo 的持续整合&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;然后在 repo 的根目录放一个 &lt;code class="code"&gt;
@@ -117,7 +117,7 @@ ssh key 添加到 github 账户就可以了，在编译细节都通过 github re
 &lt;div class="panel-heading"&gt;
 Github 上创建 Personal Access Token&lt;/div&gt;
 &lt;div class="panel-body"&gt;
-&lt;img alt="Github 上创建 Personal Access Token" class="img-responsive" src="//farseerfc.me/zhs/../images/travis-blog-push.png"/&gt;
+&lt;img alt="Github 上创建 Personal Access Token" class="img-responsive" src="{filename}/images/travis-blog-push.png"/&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;好在 Github 支持通过 &lt;a class="reference external" href="https://github.com/settings/applications"&gt;Personal Access Token&lt;/a&gt;
@@ -233,7 +233,7 @@ Readme.md&lt;/code&gt;
 &lt;p&gt;这样设置之后的另一个好处就在于可以利用 Github 的 Web 界面编辑文章内容。在 Github 里
 编辑和保存之后会自动作为一个 commit 提交，所以也会触发 Travis-CI 的自动编译。&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="在 Github 的 Web 界面中直接编辑文章内容" class="img-responsive" src="//farseerfc.me/zhs/../images/travis-edit-github-web.png"/&gt;
+&lt;img alt="在 Github 的 Web 界面中直接编辑文章内容" class="img-responsive" src="{filename}/images/travis-edit-github-web.png"/&gt;
 &lt;p class="caption"&gt;在 Github 的 Web 界面中直接编辑文章内容&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;以及虽然目前还没有好用的 Github 的手机客户端，不过直接用 Android/iPhone 的浏览器登录
@@ -283,13 +283,13 @@ github.io 是不加密的。&lt;/li&gt;
 CloudFlare 的，如下图：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="更改狗爹的域名服务器" class="img-responsive" src="//farseerfc.me/zhs/../images/godaddy.png"/&gt;
+&lt;img alt="更改狗爹的域名服务器" class="img-responsive" src="{filename}/images/godaddy.png"/&gt;
 &lt;p class="caption"&gt;更改狗爹的域名服务器&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;申请好之后就由 CloudFlare 接管域名解析了，接下来在 CloudFlare 的 DNS 设置添加一条
 &lt;a class="reference external" href="https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/"&gt;A 类规则指向 github pages 的 IP&lt;/a&gt; 。&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="更改CloudFlare的DNS规则" class="img-responsive" src="//farseerfc.me/zhs/../images/cloudflaredns.png"/&gt;
+&lt;img alt="更改CloudFlare的DNS规则" class="img-responsive" src="{filename}/images/cloudflaredns.png"/&gt;
 &lt;p class="caption"&gt;更改CloudFlare的DNS规则&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;等一切都反映到 DNS 服务器上就设置完成了，接下来给
@@ -316,7 +316,7 @@ CloudFlare 的，如下图：&lt;/li&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;然后把生成的静态网站 push 到 github 之后可以从项目设置里看到域名的变化：&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="Github 配置好自定义域名之后的变化" class="img-responsive" src="//farseerfc.me/zhs/../images/githubdomain.png"/&gt;
+&lt;img alt="Github 配置好自定义域名之后的变化" class="img-responsive" src="{filename}/images/githubdomain.png"/&gt;
 &lt;p class="caption"&gt;Github 配置好自定义域名之后的变化&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;最后把Disqus的评论也迁移到新的域名，disqus有方便的迁移向导，一直下一步就可以了。&lt;/p&gt;
@@ -1026,18 +1026,30 @@ bootstrap-material-design 样式。自己草草修改的东西被别人用到果
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;script type='text/javascript'&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+    
     var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdnjscn.b0.upaiyun.com/libs/mathjax/2.4.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.type = 'text/javascript'; 
+    mathjaxscript.src = location_protocol + '//cdnjscn.b0.upaiyun.com/libs/mathjax/2.4.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
         "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: 'center'," +
-        "    displayIndent: '0em'," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
         "    showMathMenu: true," +
         "    tex2jax: { " +
         "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
@@ -1046,9 +1058,26 @@ bootstrap-material-design 样式。自己草草修改的东西被别人用到果
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-        "    } " +
-        "}); ";
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;</summary><category term="python"></category><category term="pelican"></category><category term="bootstrap"></category><category term="material"></category><category term="subsite"></category></entry><entry><title>尝试一下 Pelican</title><link href="//farseerfc.me/zhs/try-pelican.html" rel="alternate"></link><updated>2012-02-24T17:33:00+09:00</updated><author><name>farseerfc</name></author><id>tag:farseerfc.me,2012-02-24:zhs/try-pelican.html</id><summary type="html">&lt;p&gt;似乎一夜之间所有的
