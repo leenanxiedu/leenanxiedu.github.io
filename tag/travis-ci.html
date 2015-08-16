@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-hant"
+<html lang="zh-Hant"
 >
 <head>
     <title>travis-ci - Farseerfc的小窩</title>
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+
 
     <meta name="theme-color" content="#6b5594">
 
@@ -22,7 +22,7 @@
         <meta property="og:url" content="//farseerfc.me"/>
         <meta property="og:description" content="Farseerfc的小窩"/>
 
-    
+
 
     <!-- Bootstrap -->
         <link href="//farseerfc.me/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -757,10 +757,14 @@ $.ajax( {
             bottom: function (){
                 return $("#fcfooter").offset().top -
                     $("#article-content").offset().top -
-                    $("#article-content").height() + 60;
+                    $("#article-content").height() + 20;
             }
           }
         });
+        $('#affix-toc').width($('#sidebar').width());
+    });
+    $(window).resize(function () {
+       $('#affix-toc').width($('#sidebar').width());
     });
 </script>
 
