@@ -18,19 +18,19 @@ About
 近况
 ------------------------------------------
 
-我叫 杨嘉晨 
+我叫 杨嘉晨
 
 1989年6月生
 
-目前就读于 
+目前就读于
 
-        大阪大学大学院 情报科学研究科 计算机科学专攻 
+        大阪大学大学院 情报科学研究科 计算机科学专攻
 
         博士2年级 (http://sdl.ist.osaka-u.ac.jp/)
 
 本科毕业于
 
-        上海交通大学 软件学院 软件工程专业 
+        上海交通大学 软件学院 软件工程专业
 
         F0703701班 (http://se.sjtu.edu.cn/)
 
@@ -60,7 +60,7 @@ facebook: http://www.facebook.com/farseerfc
 
 telegram: http://telegram.me/farseerfc
 
-tox: farseerfc@toxme.se
+tox: https://toxme.se/u/farseerfc
 
 关于现在用的头像
 ------------------------------------------
@@ -71,5 +71,5 @@ tox: farseerfc@toxme.se
 	这个头像来自 `HUG 大大 <http://weibo.com/PetroleummonsterHUG>`_
 	绘制的 :ruby:`十六夜|いざよい` :ruby:`咲夜|さくや` ，
 	`pixiv id=41143207 <http://www.pixiv.net/member_illust.php?mode=medium&illust_id=41143207>`_
-	因为实在太喜欢了所以就擅自拿来作为头像了。十六夜是东方系列正传 :ruby:`妖々梦|ようようむ` 、 
+	因为实在太喜欢了所以就擅自拿来作为头像了。十六夜是东方系列正传 :ruby:`妖々梦|ようようむ` 、
 	:ruby:`永夜抄|えいやしょう` 和格斗类 :ruby:`绯想天|ひそうてん`、:ruby:`非想天则|ひそうてんそく` 等作里用得最顺手的角色。
