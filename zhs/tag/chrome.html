@@ -39,6 +39,9 @@
 
         <link href="//farseerfc.me/zhs/../theme/css/material.min.css" rel="stylesheet">
         <link href="//farseerfc.me/zhs/../theme/css/ripples.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="//farseerfc.me/zhs/../theme/css/han.min.css">
+
 </head>
 <body>
 <div style="display:none" id="title">chrome - Farseerfc的小窝</div>
@@ -734,6 +737,7 @@ $.ajax( {
     </script>
     <!-- End Google Analytics Code -->
 
+<script src="//farseerfc.me/zhs/../theme/js/han.min.js"></script>
 <script src="//farseerfc.me/zhs/../theme/js/ripples.min.js"></script>
 <script src="//farseerfc.me/zhs/../theme/js/material.min.js"></script>
 <script src="//farseerfc.me/zhs/../theme/js/jquery.bootstrap-autohidingnavbar.min.js"></script>
@@ -761,6 +765,14 @@ $.ajax( {
           }
         });
         $('#affix-toc').width($('#sidebar').width());
+        Han()
+          .initCond()
+          .renderElem()
+          // .renderHanging()
+          // .renderJiya()
+          .renderHWS()
+          .correctBasicBD()
+          .substCombLigaWithPUA();
     });
     $(window).resize(function () {
        $('#affix-toc').width($('#sidebar').width());

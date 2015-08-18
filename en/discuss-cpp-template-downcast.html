@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=""
+<html lang="en-us"
 >
 <head>
     <title>Discuss C++ Template Downcast - Farseerfc's Nest</title>
@@ -47,6 +47,9 @@
 
         <link href="//farseerfc.me/en/../theme/css/material.min.css" rel="stylesheet">
         <link href="//farseerfc.me/en/../theme/css/ripples.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="//farseerfc.me/en/../theme/css/han.min.css">
+
 </head>
 <body>
 <div style="display:none" id="title">Discuss C++ Template Downcast - Farseerfc's Nest</div>
@@ -873,6 +876,7 @@ Table of Contents</h4>
     </script>
     <!-- End Google Analytics Code -->
 
+<script src="//farseerfc.me/en/../theme/js/han.min.js"></script>
 <script src="//farseerfc.me/en/../theme/js/ripples.min.js"></script>
 <script src="//farseerfc.me/en/../theme/js/material.min.js"></script>
 <script src="//farseerfc.me/en/../theme/js/jquery.bootstrap-autohidingnavbar.min.js"></script>
@@ -900,6 +904,14 @@ Table of Contents</h4>
           }
         });
         $('#affix-toc').width($('#sidebar').width());
+        Han()
+          .initCond()
+          .renderElem()
+          // .renderHanging()
+          // .renderJiya()
+          .renderHWS()
+          .correctBasicBD()
+          .substCombLigaWithPUA();
     });
     $(window).resize(function () {
        $('#affix-toc').width($('#sidebar').width());

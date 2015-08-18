@@ -39,6 +39,9 @@
 
         <link href="//farseerfc.me/en/../theme/css/material.min.css" rel="stylesheet">
         <link href="//farseerfc.me/en/../theme/css/ripples.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="//farseerfc.me/en/../theme/css/han.min.css">
+
 </head>
 <body>
 <div style="display:none" id="title">Search - Farseerfc's Nest
@@ -502,6 +505,7 @@ $.ajax( {
       });
     });
     </script>
+<script src="//farseerfc.me/en/../theme/js/han.min.js"></script>
 <script src="//farseerfc.me/en/../theme/js/ripples.min.js"></script>
 <script src="//farseerfc.me/en/../theme/js/material.min.js"></script>
 <script src="//farseerfc.me/en/../theme/js/jquery.bootstrap-autohidingnavbar.min.js"></script>
@@ -529,6 +533,14 @@ $.ajax( {
           }
         });
         $('#affix-toc').width($('#sidebar').width());
+        Han()
+          .initCond()
+          .renderElem()
+          // .renderHanging()
+          // .renderJiya()
+          .renderHWS()
+          .correctBasicBD()
+          .substCombLigaWithPUA();
     });
     $(window).resize(function () {
        $('#affix-toc').width($('#sidebar').width());
