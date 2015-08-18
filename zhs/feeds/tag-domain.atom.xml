@@ -17,7 +17,7 @@ farseerfc.me&lt;/code&gt;
 &lt;li&gt;支持 SPDY 协议&lt;/li&gt;
 &lt;li&gt;支持 IPv6&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;然后 &lt;strong&gt;免费账户&lt;/strong&gt; 的一些缺点有：&lt;/p&gt;
+&lt;p&gt;然后 &lt;em&gt;免费账户&lt;/em&gt; 的一些缺点有：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;CloudFlare 和 github.io 之间的数据不是加密的，因为 github
 &lt;ruby&gt;&lt;rb&gt;自定义域名&lt;/rb&gt;&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;custom domain&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt; 还不支持使用自己的证书。这也是一开始我没用
